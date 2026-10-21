@@ -21,7 +21,7 @@ O painel de métricas do **StartUP** acompanha o desempenho do produto e do dese
 | Métrica | Tipo | Valor atual | Período |
 |---|---|---:|---|
 | Retenção de usuários | Produto | 20% | Semanal |
-| NPS | Produto | +30 *(simulado)* | Pesquisa de exemplo |
+| NPS | Produto | +30  | Pesquisa de exemplo |
 | Usuários ativados | Produto | 30 usuários | Semanal |
 | Commits | Código | 12 | Semanal |
 | Bugs em aberto | Código | 5 | No momento da medição |
