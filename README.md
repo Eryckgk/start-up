@@ -36,7 +36,7 @@ Facilitar a criação de startups por meio da conexão entre pessoas, ideias e h
 
 O StartUP será avaliado por meio de métricas de produto e de código, permitindo identificar dificuldades, acompanhar resultados e orientar melhorias com base em dados.
 
-Os arquivos de acompanhamento estão organizados na pasta `metricas/`:
+Os arquivos de acompanhamento estão organizados na pasta `metricas`:
 
 - [`painel.md`](metricas/painel.md) — métricas escolhidas, cálculos de NPS, retenção e churn, além do funil AARRR.
 - [`decisao.md`](metricas/decisao.md) — registro da decisão coletiva, justificativa, responsável e data de revisão.
