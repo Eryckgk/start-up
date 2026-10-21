@@ -47,7 +47,7 @@ As tecnologias utilizadas serão documentadas de acordo com as ferramentas e lin
 
 ## 👨‍💻 Equipe
 
-- **Integrantes:** [Kauã, Eryck, Mario, Caio, Wanessa]
+- **Integrantes:** Kauã, Eryck, Mario, Caio, Wanessa
 - **Projeto:** StartUP
 - **Atividade:** Projeto 3 — Painel de Métricas do Produto
 
