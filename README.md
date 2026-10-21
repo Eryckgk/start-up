@@ -1,16 +1,62 @@
-# React + Vite
+# 🚀 StartUP
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+### Conectando pessoas. Construindo startups. Transformando ideias em realidade.
 
-Currently, two official plugins are available:
+## 💡 Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O **StartUP** é uma plataforma que conecta pessoas interessadas em criar startups, encontrar sócios e formar equipes com habilidades complementares.
 
-## React Compiler
+A ideia é funcionar como uma rede social voltada ao empreendedorismo, permitindo que os usuários compartilhem suas necessidades, apresentem suas habilidades e encontrem pessoas interessadas em participar de novos projetos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Por exemplo, alguém que precisa de um desenvolvedor back-end para tirar uma ideia do papel pode publicar essa necessidade e encontrar pessoas interessadas em colaborar.
 
-## Expanding the Oxlint configuration
+## 🎯 Objetivo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Facilitar a criação de startups por meio da conexão entre pessoas, ideias e habilidades, incentivando a colaboração e o desenvolvimento de novos negócios.
+
+## 👥 Público-alvo
+
+- Empreendedores que desejam tirar ideias do papel.
+- Desenvolvedores e profissionais de tecnologia.
+- Designers e profissionais de marketing.
+- Pessoas que procuram sócios ou colaboradores.
+- Estudantes interessados em inovação e empreendedorismo.
+
+## ⚙️ Funcionalidades propostas
+
+- **Perfis de usuários:** apresentação de habilidades e interesses.
+- **Publicação de projetos:** divulgação de ideias e oportunidades.
+- **Busca por colaboradores:** conexão entre pessoas com habilidades complementares.
+- **Formação de equipes:** aproximação de pessoas interessadas em desenvolver uma startup.
+- **Comunicação entre usuários:** contato para discutir ideias e possíveis parcerias.
+
+*As funcionalidades devem ser ajustadas conforme o que já foi efetivamente implementado na plataforma.*
+
+## 📊 Métricas e evolução do produto
+
+O StartUP será avaliado por meio de métricas de produto e de código, permitindo identificar dificuldades, acompanhar resultados e orientar melhorias com base em dados.
+
+Os arquivos de acompanhamento estão organizados na pasta `metricas/`:
+
+- [`painel.md`](metricas/painel.md) — métricas escolhidas, cálculos de NPS, retenção e churn, além do funil AARRR.
+- [`decisao.md`](metricas/decisao.md) — registro da decisão coletiva, justificativa, responsável e data de revisão.
+
+## 🛠️ Tecnologias utilizadas
+
+As tecnologias utilizadas serão documentadas de acordo com as ferramentas e linguagens efetivamente adotadas no desenvolvimento do projeto.
+
+## 👨‍💻 Equipe
+
+- **Integrantes:** [Adicionar os nomes da equipe]
+- **Projeto:** StartUP
+- **Atividade:** Projeto 3 — Painel de Métricas do Produto
+
+## 📌 Status do projeto
+
+Em desenvolvimento.
+
+A equipe busca aprimorar continuamente a plataforma, utilizando as necessidades dos usuários e os resultados das métricas para orientar as próximas melhorias.
+
+---
+
+*StartUP — Grandes ideias começam com as conexões certas.*
