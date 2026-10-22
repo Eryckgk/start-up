@@ -1,241 +1,175 @@
-# 🚀 StartUP — Painel de Métricas
+# 📊 StartUP — Painel de Métricas do Produto
 
-> **Conectando pessoas. Construindo startups. Transformando ideias em realidade.**
+## 1. Identificação
 
-O painel de métricas do **StartUP** acompanha o desempenho do produto e do desenvolvimento, ajudando a equipe a identificar problemas e tomar decisões baseadas em dados.
+- **Produto:** StartUP
+- **Objetivo:** conectar pessoas interessadas em criar startups e formar equipes.
+- **Público-alvo:** empreendedores, estudantes, desenvolvedores e designers.
+- **Período de referência:** 21/10/2026 a 22/10/2026.
+- **Situação dos dados:** estimativas de uso simuladas para demonstrar os cálculos; respostas do NPS informadas como coletadas pela equipe; métricas de código a conferir no GitHub.
 
----
+## 2. Métricas escolhidas
 
-## 📌 1. Visão geral
+A equipe selecionou cinco métricas: três de produto e duas de código.
 
-| Informação | Descrição |
-|---|---|
-| **Produto** | StartUP |
-| **Objetivo** | Conectar pessoas interessadas em criar startups e formar equipes |
-| **Público-alvo** | Empreendedores, estudantes, desenvolvedores e designers |
-| **Período de análise** | Uma semana, no exemplo |
-| **Status dos dados** | Simulados — substituir por dados reais quando disponíveis |
+| Métrica | Tipo | Valor atual | Período | Se piorar, vamos... |
+|---|---|---:|---|---|
+| Taxa de ativação | Produto | 30% | 21–22/10/2026 — estimativa | Revisar o cadastro e as orientações do primeiro acesso |
+| Retenção | Produto | 66,7% | Coorte ilustrativa de acompanhamento | Investigar por que os usuários não voltam |
+| NPS | Produto | +40 | Pesquisa com 10 respostas | Coletar opiniões e investigar a experiência dos usuários |
+| Commits | Código | 23 | 21–22/10/2026 | Verificar se alguém está bloqueado e revisar as tarefas |
+| Bugs em aberto | Código | 5 | Situação atual a conferir | Priorizar correções dos erros mais importantes |
 
-## 📊 2. Indicadores principais
+\* Conferir os valores de commits e bugs no GitHub antes da entrega. A retenção usa uma coorte ilustrativa até que os retornos possam ser medidos.
 
-| Métrica | Tipo | Valor atual | Período |
-|---|---|---:|---|
-| Retenção de usuários | Produto | 20% | Semanal |
-| NPS | Produto | +30  | Pesquisa de exemplo |
-| Usuários ativados | Produto | 30 usuários | Semanal |
-| Commits | Código | 12 | Semanal |
-| Bugs em aberto | Código | 5 | No momento da medição |
+## 3. Cálculos obrigatórios
 
-### 🔁 Retenção de usuários
+### 3.1. NPS — Net Promoter Score
 
-**O que mede:** a porcentagem de usuários que voltaram a utilizar o StartUP durante o período definido.
+Pergunta da pesquisa: **“De 0 a 10, quanto você recomendaria este produto?”**
 
-**Dados do exemplo:**
-- Usuários no início: 100
-- Usuários que retornaram: 20
+**Respostas informadas:**
+
+9, 8, 7, 10, 7, 10, 9, 7, 8, 7.
+
+Total: 10 respostas.
+
+**Promotores (notas 9–10):**
+- Quantidade: 4 pessoas.
+- Percentual: (4 ÷ 10) × 100 = 40%.
+
+**Neutros (notas 7–8):**
+- Quantidade: 6 pessoas.
+- Percentual: (6 ÷ 10) × 100 = 60%.
+
+**Detratores (notas 0–6):**
+- Quantidade: 0 pessoas.
+- Percentual: (0 ÷ 10) × 100 = 0%.
+
+**Fórmula do NPS:**
+
+NPS = % de promotores − % de detratores
+
+**Cálculo:**
+
+NPS = 40% − 0% = **+40**
+
+**Interpretação:** o NPS é positivo. Entretanto, as seis respostas neutras indicam que ainda há espaço para melhorar a experiência do produto.
+
+**Se este número piorar, a equipe vai:** investigar as dificuldades dos usuários e identificar melhorias prioritárias.
+
+### 3.2. Retenção
+
+A retenção mede a porcentagem dos usuários que começaram a utilizar o produto e voltaram durante o período de acompanhamento.
+
+Para demonstrar a fórmula, é utilizada uma coorte ilustrativa:
+
+- Usuários no início da coorte: 6.
+- Usuários que voltaram: 4.
+- Usuários que não voltaram: 2.
 
 **Fórmula:**
 
-`Retenção = (Usuários que retornaram / Usuários no início) × 100`
+Retenção = (usuários que voltaram ÷ usuários que começaram) × 100
 
 **Cálculo:**
 
-`(20 / 100) × 100 = 20%`
+Retenção = (4 ÷ 6) × 100 = **66,7%**
 
-**Resultado:** `20%`
+**Interpretação:** no exemplo, quatro dos seis usuários voltaram a utilizar o produto.
 
-**Ação:** Se este número piorar, vamos investigar por que os usuários não estão voltando e melhorar a busca por colaboradores, as recomendações de projetos e a experiência de uso.
+**Se este número piorar, a equipe vai:** investigar as dificuldades no uso e melhorar os recursos que ajudam os usuários a encontrar projetos e colaboradores.
 
-### ⭐ NPS — Net Promoter Score
+### 3.3. Churn
 
-**O que mede:** a disposição dos usuários de recomendar o StartUP para outras pessoas.
+O churn mede a porcentagem dos usuários da coorte inicial que saíram ou não retornaram durante o acompanhamento.
 
-**Pergunta da pesquisa:**
-
-> De 0 a 10, quanto você recomendaria o StartUP para um amigo ou colega?
-
-**Classificação das respostas:**
-- 🟢 **Promotores:** notas 9 e 10.
-- 🟡 **Neutros:** notas 7 e 8.
-- 🔴 **Detratores:** notas de 0 a 6.
-
-**Exemplo simulado com 10 respostas:**
-
-| Classificação | Quantidade | Percentual |
-|---|---:|---:|
-| Promotores | 5 | 50% |
-| Neutros | 3 | 30% |
-| Detratores | 2 | 20% |
-| **Total** | **10** | **100%** |
+**Dados da mesma coorte ilustrativa:**
+- Usuários no início: 6.
+- Usuários que não retornaram: 2.
 
 **Fórmula:**
 
-`NPS = % de promotores - % de detratores`
+Churn = (usuários que saíram ÷ usuários no início) × 100
 
 **Cálculo:**
 
-`50% - 20% = +30`
+Churn = (2 ÷ 6) × 100 = **33,3%**
 
-**Resultado do exemplo:** `NPS = +30`
+**Conferência da relação entre retenção e churn:**
 
-O NPS pode variar de -100 a +100. Esse resultado é apenas ilustrativo e não deve ser apresentado como uma pesquisa real.
+Retenção + Churn = 100%
 
-**Resultado da pesquisa real:**
+66,7% + 33,3% = **100%**
 
-- Respostas coletadas: 10
-- Promotores: 5
-- Neutros: 3
-- Detratores: 2
-- NPS real: 
+**Interpretação:** no exemplo, dois dos seis usuários não retornaram.
 
-**Ação:** Se este número piorar, vamos conversar com os usuários, identificar suas dificuldades e priorizar melhorias na plataforma.
+**Se este número piorar, a equipe vai:** analisar os motivos da saída e priorizar melhorias que incentivem os usuários a voltar.
 
-### 👥 Usuários ativados
+> **Nota sobre a medição:** os números da coorte de retenção e churn são ilustrativos, não resultados confirmados do site. Para apresentá-los como dados reais, a equipe precisa acompanhar uma coorte de usuários durante um período definido.
 
-**O que mede:** a quantidade de visitantes que realizam uma ação importante, como completar o perfil ou publicar uma necessidade de equipe.
+## 4. Funil AARRR
 
-**Dados do exemplo:**
-- Visitantes: 100
-- Usuários ativados: 30
+O funil AARRR organiza a jornada do usuário em cinco etapas: aquisição, ativação, retenção, receita e recomendação.
 
-**Fórmula:**
+| Etapa | Número | Percentual e interpretação |
+|---|---:|---|
+| Aquisição | 20 pessoas | 100% dos visitantes estimados |
+| Ativação | 6 pessoas | (6 ÷ 20) × 100 = 30% dos visitantes |
+| Retenção | 4 pessoas | (4 ÷ 6) × 100 = 66,7% da coorte ativada ilustrativa |
+| Receita | 0 pessoas pagantes | Monetização não implementada ou não mensurada |
+| Recomendação | NPS +40 | 4 promotores entre 10 respostas |
 
-`Taxa de ativação = (Usuários ativados / Visitantes) × 100`
+**Atenção:** os números de aquisição, ativação e retenção são estimativas para fins acadêmicos. A etapa de recomendação vem da pesquisa NPS e não deve ser interpretada como se fossem necessariamente as mesmas pessoas do funil.
 
-**Cálculo:**
+### Onde está a maior queda?
 
-`(30 / 100) × 100 = 30%`
+A maior queda identificada no funil estimado ocorre entre **aquisição e ativação**.
 
-**Resultado:** `30%`
+- Visitantes: 20.
+- Usuários ativados: 6.
+- Visitantes que não se ativaram: 14.
 
-**Ação:** Se este número piorar, vamos simplificar o cadastro e explicar melhor como criar um perfil, publicar um projeto e encontrar colaboradores.
+**Fórmula da taxa de queda:**
 
-### 💻 Commits no GitHub
-
-**O que mede:** a quantidade de alterações de código registradas no repositório durante uma semana.
-
-**Valor do exemplo:** `12 commits por semana`.
-
-**Como medir:** consultar o histórico de commits do repositório StartUP e contar os commits do período analisado.
-
-**Ação:** Se este número piorar, vamos revisar a divisão das tarefas, identificar dificuldades técnicas e organizar melhor o trabalho da equipe.
-
-> A quantidade de commits, sozinha, não garante que o código tenha qualidade.
-
-### 🐛 Bugs em aberto
-
-**O que mede:** a quantidade de erros identificados que ainda não foram corrigidos.
-
-**Valor do exemplo:** `5 bugs em aberto`.
-
-**Como medir:** contar os problemas registrados que continuam pendentes.
-
-**Ação:** Se este número piorar, vamos priorizar os erros mais importantes, definir responsáveis pelas correções e testar as soluções.
-
----
-
-## 🔄 3. Retenção e churn
-
-O **churn** representa a porcentagem de usuários que não retornaram no período definido.
-
-**Dados simulados:**
-- Usuários no início: 100
-- Usuários que retornaram: 20
-- Usuários que não retornaram: 80
-
-### Cálculo da retenção
-
-`Retenção = (20 / 100) × 100 = 20%`
-
-### Cálculo do churn
-
-`Churn = (Usuários que não retornaram / Usuários no início) × 100`
-
-`Churn = (80 / 100) × 100 = 80%`
-
-### Conferência
-
-`Retenção + Churn = 20% + 80% = 100%`
-
-**Interpretação:** no exemplo, 20% dos usuários retornaram e 80% não retornaram durante o período analisado. A equipe deve investigar as razões para o baixo retorno.
-
----
-
-## 🧭 4. Funil AARRR
-
-O funil AARRR ajuda a entender a jornada dos usuários dentro do produto.
-
-| Etapa | Indicador simulado | Conversão da etapa anterior |
-|---|---:|---:|
-| **Aquisição** | 100 visitantes | — |
-| **Ativação** | 30 usuários ativados | 30% |
-| **Retenção** | 20 usuários que retornaram | 66,7% |
-| **Receita** | 10 usuários pagantes hipotéticos | 50% |
-| **Recomendação** | 5 promotores em 10 respostas simuladas | 50% dos respondentes |
-
-**Cálculos das conversões:**
-
-- **Aquisição → Ativação:** `30 / 100 × 100 = 30%`
-- **Ativação → Retenção:** `20 / 30 × 100 ≈ 66,7%`
-- **Retenção → Receita:** `10 / 20 × 100 = 50%`
-
-### 📉 Maior queda do funil
-
-A maior queda percentual ocorre entre **Aquisição e Ativação**.
-
-| Indicador | Valor |
-|---|---:|
-| Visitantes | 100 |
-| Usuários ativados | 30 |
-| Visitantes que não ativaram | 70 |
-| **Taxa de queda** | **70%** |
+Taxa de queda = ((visitantes − usuários ativados) ÷ visitantes) × 100
 
 **Cálculo:**
 
-`Taxa de queda = ((100 - 30) / 100) × 100`
+((20 − 6) ÷ 20) × 100 = **70%**
 
-`Taxa de queda = 70%`
+**Resultado:** 70% dos visitantes estimados não chegaram à etapa de ativação.
 
-**Interpretação:** muitos visitantes não chegam a realizar a primeira ação importante dentro do StartUP.
+Essa é a etapa prioritária a investigar, pois o problema ocorre antes de os visitantes conseguirem utilizar o produto de forma significativa.
 
-**Ação proposta:** simplificar o cadastro e melhorar as orientações do primeiro acesso.
+## 5. Decisão coletiva
 
----
+### Duas opções de ação
 
-## 🎯 5. Decisão baseada nos dados
+| Opção | O que ganhamos | O que abrimos mão |
+|---|---|---|
+| **A — Simplificar o cadastro e melhorar o primeiro acesso** | Pode facilitar a ativação de novos usuários e reduzir as dificuldades iniciais | Parte do tempo de desenvolvimento será dedicada ao cadastro e às orientações |
+| **B — Corrigir bugs e melhorar a estabilidade** | Pode reduzir erros e tornar o produto mais confiável | A melhoria da entrada de novos usuários pode ficar para depois |
 
-**Problema identificado:** baixa ativação dos visitantes.
+### Número que orienta a escolha
 
-**Número que justifica a decisão:** queda de `70%` entre aquisição e ativação, no exemplo simulado.
+A estimativa indica que **14 de 20 visitantes não se ativaram, uma queda de 70% entre aquisição e ativação**.
 
-**Ação proposta:** simplificar o cadastro e melhorar as orientações para novos usuários.
+Por esse motivo, a opção A é a prioridade proposta: simplificar o cadastro e melhorar as orientações do primeiro acesso.
 
-**Responsável:** definir com a equipe.
+**Registro do voto:** a equipe deve confirmar a opção escolhida após discutir as duas alternativas e realizar a votação informada. A decisão final e eventual discordância devem ser registradas em `metricas/decisao.md`.
 
-**Revisão:** definir uma data com a equipe.
+## 6. Conclusão
 
-A decisão final deve ser discutida e aprovada coletivamente, registrada em `metricas/decisao.md` e acompanhada por uma *Issue* no GitHub.
+A principal oportunidade de melhoria identificada no painel é a etapa de ativação. Na estimativa utilizada, 14 dos 20 visitantes não realizaram uma ação importante, representando uma queda de 70%.
 
----
+A ação proposta é simplificar o cadastro e melhorar as orientações do primeiro acesso. Após a equipe confirmar essa decisão, a melhoria deverá ser registrada em uma Issue do GitHub, implementada e avaliada por uma nova medição da taxa de ativação.
 
-## ✅ 6. Conclusão
+**Próxima revisão sugerida:** 29/10/2026.
 
-Com base nos exemplos simulados, o StartUP apresenta três pontos que merecem atenção:
+## 7. Situação dos dados
 
-1. **Ativação:** apenas 30% dos visitantes realizam uma ação importante.
-2. **Retenção:** somente 20% dos usuários retornam no período considerado.
-3. **Funil:** a maior queda ocorre entre aquisição e ativação, com 70%.
-
-A equipe deve usar esses indicadores para priorizar melhorias, acompanhar os resultados e verificar se as mudanças realmente ajudam os usuários.
-
-### 📋 Próximos passos
-
-- [ ] Coletar pelo menos 10 respostas reais para o NPS.
-- [ ] Substituir os valores simulados pelos dados reais disponíveis.
-- [ ] Conferir os commits e os bugs diretamente no projeto.
-- [ ] Definir a decisão coletiva e o responsável.
-- [ ] Criar uma *Issue* no GitHub para acompanhar a ação.
-
----
-
-**StartUP — Conectando pessoas, ideias e oportunidades.**
+- **NPS:** 10 respostas informadas pela equipe; manter como pesquisa real somente se foram efetivamente coletadas.
+- **Aquisição e ativação:** estimativas simuladas para demonstrar os cálculos.
+- **Retenção e churn:** coorte ilustrativa; medir os retornos reais antes de tratar os resultados como observados.
+- **Commits e bugs:** conferir os valores no GitHub.
