@@ -17,7 +17,7 @@ A equipe selecionou cinco métricas: três de produto e duas de código.
 | Taxa de ativação | Produto | 30% | 21–22/10/2026 — estimativa | Revisar o cadastro e as orientações do primeiro acesso |
 | Retenção | Produto | 66,7% | Coorte ilustrativa de acompanhamento | Investigar por que os usuários não voltam |
 | NPS | Produto | +40 | Pesquisa com 10 respostas | Coletar opiniões e investigar a experiência dos usuários |
-| Commits | Código | 24 | 21–22/10/2026 | Verificar se alguém está bloqueado e revisar as tarefas |
+| Commits | Código | 25 | 21–22/10/2026 | Verificar se alguém está bloqueado e revisar as tarefas |
 | Bugs em aberto | Código | 5 | Situação atual a conferir | Priorizar correções dos erros mais importantes |
 
 \* Conferir os valores de commits e bugs no GitHub antes da entrega. A retenção usa uma coorte ilustrativa até que os retornos possam ser medidos.
@@ -110,13 +110,13 @@ Retenção + Churn = 100%
 
 O funil AARRR organiza a jornada do usuário em cinco etapas: aquisição, ativação, retenção, receita e recomendação.
 
-| Etapa | Número | Percentual e interpretação |
-|---|---:|---|
-| Aquisição | 20 pessoas | 100% dos visitantes estimados |
-| Ativação | 6 pessoas | (6 ÷ 20) × 100 = 30% dos visitantes |
-| Retenção | 4 pessoas | (4 ÷ 6) × 100 = 66,7% da coorte ativada ilustrativa |
-| Receita | 0 pessoas pagantes | Monetização não implementada ou não mensurada |
-| Recomendação | NPS +40 | 4 promotores entre 10 respostas |
+| Etapa | Número | Percentual e interpretação | Período |
+|---|---|---|---|
+| Aquisição | 20 pessoas | 100% dos visitantes estimados | 21–22/10/2026 — estimativa |
+| Ativação | 6 pessoas | (6 ÷ 20) × 100 = 30% dos visitantes | 21–22/10/2026 — estimativa |
+| Retenção | 4 pessoas | (4 ÷ 6) × 100 = 66,7% da coorte ativada ilustrativa | Coorte ilustrativa de acompanhamento |
+| Receita | 0 pessoas pagantes | Monetização não implementada ou não mensurada | Não mensurado |
+| Recomendação | NPS +40 | 4 promotores entre 10 respostas | Pesquisa com 10 respostas |
 
 **Atenção:** os números de aquisição, ativação e retenção são estimativas para fins acadêmicos. A etapa de recomendação vem da pesquisa NPS e não deve ser interpretada como se fossem necessariamente as mesmas pessoas do funil.
 
