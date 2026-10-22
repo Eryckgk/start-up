@@ -17,10 +17,8 @@ A equipe selecionou cinco métricas: três de produto e duas de código.
 | Taxa de ativação | Produto | 30% | 21–22/10/2026 — estimativa | Revisar o cadastro e as orientações do primeiro acesso |
 | Retenção | Produto | 66,7% | Coorte ilustrativa de acompanhamento | Investigar por que os usuários não voltam |
 | NPS | Produto | +40 | Pesquisa com 10 respostas | Coletar opiniões e investigar a experiência dos usuários |
-| Commits | Código | 25 | 21–22/10/2026 | Verificar se alguém está bloqueado e revisar as tarefas |
+| Commits | Código | 26 | 21–22/10/2026 | Verificar se alguém está bloqueado e revisar as tarefas |
 | Bugs em aberto | Código | 5 | Situação atual a conferir | Priorizar correções dos erros mais importantes |
-
-\* Conferir os valores de commits e bugs no GitHub antes da entrega. A retenção usa uma coorte ilustrativa até que os retornos possam ser medidos.
 
 ## 3. Cálculos obrigatórios
 
@@ -164,10 +162,3 @@ A principal oportunidade de melhoria identificada no painel é a etapa de ativa�
 A ação proposta é simplificar o cadastro e melhorar as orientações do primeiro acesso. Após a equipe confirmar essa decisão, a melhoria deverá ser registrada em uma Issue do GitHub, implementada e avaliada por uma nova medição da taxa de ativação.
 
 **Próxima revisão sugerida:** 29/10/2026.
-
-## 7. Situação dos dados
-
-- **NPS:** 10 respostas informadas pela equipe; manter como pesquisa real somente se foram efetivamente coletadas.
-- **Aquisição e ativação:** estimativas simuladas para demonstrar os cálculos.
-- **Retenção e churn:** coorte ilustrativa; medir os retornos reais antes de tratar os resultados como observados.
-- **Commits e bugs:** conferir os valores no GitHub.
