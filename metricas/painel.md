@@ -82,11 +82,11 @@ O NPS pode variar de -100 a +100. Esse resultado é apenas ilustrativo e não de
 
 **Resultado da pesquisa real:**
 
-- Respostas coletadas: ___
-- Promotores: ___
-- Neutros: ___
-- Detratores: ___
-- NPS real: ___
+- Respostas coletadas: 10
+- Promotores: 5
+- Neutros: 3
+- Detratores: 2
+- NPS real: 
 
 **Ação:** Se este número piorar, vamos conversar com os usuários, identificar suas dificuldades e priorizar melhorias na plataforma.
 
