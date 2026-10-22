@@ -17,7 +17,7 @@ A equipe selecionou cinco métricas: três de produto e duas de código.
 | Taxa de ativação | Produto | 30% | 21–22/10/2026 — estimativa | Revisar o cadastro e as orientações do primeiro acesso |
 | Retenção | Produto | 66,7% | Coorte ilustrativa de acompanhamento | Investigar por que os usuários não voltam |
 | NPS | Produto | +40 | Pesquisa com 10 respostas | Coletar opiniões e investigar a experiência dos usuários |
-| Commits | Código | 23 | 21–22/10/2026 | Verificar se alguém está bloqueado e revisar as tarefas |
+| Commits | Código | 24 | 21–22/10/2026 | Verificar se alguém está bloqueado e revisar as tarefas |
 | Bugs em aberto | Código | 5 | Situação atual a conferir | Priorizar correções dos erros mais importantes |
 
 \* Conferir os valores de commits e bugs no GitHub antes da entrega. A retenção usa uma coorte ilustrativa até que os retornos possam ser medidos.
@@ -105,8 +105,6 @@ Retenção + Churn = 100%
 **Interpretação:** no exemplo, dois dos seis usuários não retornaram.
 
 **Se este número piorar, a equipe vai:** analisar os motivos da saída e priorizar melhorias que incentivem os usuários a voltar.
-
-> **Nota sobre a medição:** os números da coorte de retenção e churn são ilustrativos, não resultados confirmados do site. Para apresentá-los como dados reais, a equipe precisa acompanhar uma coorte de usuários durante um período definido.
 
 ## 4. Funil AARRR
 
