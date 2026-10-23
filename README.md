@@ -26,6 +26,26 @@ VITE_SUPABASE_ANON_KEY=
 
 Se as variáveis forem omitidas, o app continua funcionando em modo mock local.
 
+### Publicar com Supabase no GitHub Pages
+
+O build publicado precisa receber estas variáveis durante a execução do GitHub
+Actions:
+
+- `SUPABASE_URL`: Project URL em **Supabase > Project Settings > API**.
+- `SUPABASE_ANON_KEY`: chave publicável (`anon`/`publishable`) do mesmo projeto.
+
+No GitHub, abra **Settings > Secrets and variables > Actions > New repository
+secret** e cadastre cada valor com o nome exato acima. Nunca use a chave
+`service_role` no site: variáveis `VITE_*` são incluídas no JavaScript público.
+As tabelas devem estar protegidas por Row Level Security.
+
+Depois, em **Settings > Pages**, selecione **GitHub Actions** como fonte de
+deploy. Faça um push para `main` ou `master` (ou execute manualmente
+**Actions > Deploy to GitHub Pages > Run workflow**). O workflow valida os
+secrets, faz lint, compila o site com as credenciais do Supabase e publica o
+artefato. A configuração da URL base também é ajustada para o nome do
+repositório.
+
 ## Conversas em tempo real
 
 O chat em tempo real exige um projeto Supabase configurado. Aplique o arquivo
