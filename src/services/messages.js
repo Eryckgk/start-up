@@ -16,6 +16,26 @@ export async function findPeopleToMessage(userId, search) {
     return data || []
 }
 
+export async function listOnlinePeople(userId, onlineUserIds) {
+    const otherUserIds = onlineUserIds.filter((id) => id !== userId)
+
+    if (otherUserIds.length === 0) {
+        return []
+    }
+
+    const { data, error } = await supabase
+        .from("profiles")
+        .select("id,display_name,username")
+        .in("id", otherUserIds)
+        .order("display_name")
+
+    if (error) {
+        throw error
+    }
+
+    return data || []
+}
+
 export async function openDirectConversation(otherUserId) {
     const { data, error } = await supabase.rpc(
         "open_direct_conversation",

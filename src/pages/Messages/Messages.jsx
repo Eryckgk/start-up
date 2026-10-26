@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth"
 import { supabase } from "../../services/supabase"
 import {
     findPeopleToMessage,
+    listOnlinePeople,
     listConversations,
     listMessages,
     openDirectConversation,
@@ -53,14 +54,16 @@ function getErrorMessage(error) {
 }
 
 function Messages() {
-    const { user } = useAuth()
+    const { user, onlineUserIds, presenceStatus } = useAuth()
     const [conversations, setConversations] = useState([])
     const [selectedId, setSelectedId] = useState(null)
     const [messages, setMessages] = useState([])
     const [message, setMessage] = useState("")
     const [search, setSearch] = useState("")
     const [people, setPeople] = useState([])
+    const [onlinePeople, setOnlinePeople] = useState([])
     const [loadingPeople, setLoadingPeople] = useState(false)
+    const [loadingOnlinePeople, setLoadingOnlinePeople] = useState(false)
     const [loadingConversations, setLoadingConversations] = useState(true)
     const [sending, setSending] = useState(false)
     const [error, setError] = useState("")
@@ -133,6 +136,43 @@ function Messages() {
             active = false
         }
     }, [isConfigured, user?.id])
+
+    useEffect(() => {
+        let active = true
+
+        if (!user?.id || !isConfigured) {
+            setOnlinePeople([])
+            setLoadingOnlinePeople(false)
+            return () => {
+                active = false
+            }
+        }
+
+        setOnlinePeople([])
+        setLoadingOnlinePeople(true)
+
+        listOnlinePeople(user.id, onlineUserIds)
+            .then((items) => {
+                if (active) {
+                    setOnlinePeople(items)
+                }
+            })
+            .catch((loadError) => {
+                console.error("Erro ao carregar pessoas online:", loadError)
+                if (active) {
+                    setError(getErrorMessage(loadError))
+                }
+            })
+            .finally(() => {
+                if (active) {
+                    setLoadingOnlinePeople(false)
+                }
+            })
+
+        return () => {
+            active = false
+        }
+    }, [isConfigured, onlineUserIds, user?.id])
 
     useEffect(() => {
         if (!user?.id || !isConfigured) {
@@ -387,6 +427,47 @@ function Messages() {
                                 </button>
                             ))}
                         </div>
+                    )}
+
+                    <h2 className="conversation-heading">Pessoas online</h2>
+                    {!isConfigured ? (
+                        <p className="messages-empty">
+                            Configure o Supabase para ver quem está online.
+                        </p>
+                    ) : !user?.id ? (
+                        <p className="messages-empty">
+                            Entre na sua conta para ver quem está online.
+                        </p>
+                    ) : presenceStatus === "error" ? (
+                        <p className="messages-empty">
+                            Não foi possível verificar quem está online. Tente novamente mais tarde.
+                        </p>
+                    ) : presenceStatus !== "connected" || loadingOnlinePeople ? (
+                        <p className="messages-empty">Carregando pessoas online...</p>
+                    ) : onlinePeople.length ? (
+                        <div className="online-people">
+                            {onlinePeople.map((person) => (
+                                <button
+                                    key={person.id}
+                                    type="button"
+                                    className="people-result"
+                                    onClick={() => startConversation(person)}
+                                >
+                                    <span className="message-avatar">
+                                        {person.display_name?.charAt(0).toUpperCase() || "U"}
+                                    </span>
+                                    <span>
+                                        <strong>{person.display_name}</strong>
+                                        {person.username && <small>@{person.username}</small>}
+                                    </span>
+                                    <span className="online-indicator" aria-label="Online" />
+                                </button>
+                            ))}
+                        </div>
+                    ) : (
+                        <p className="messages-empty">
+                            Não há outras pessoas online no momento.
+                        </p>
                     )}
 
                     <h2 className="conversation-heading">Suas conversas</h2>
