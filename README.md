@@ -1,64 +1,86 @@
-# START_UP
+StartUP — Painel de Métricas do Produto
+Conectando pessoas. Construindo startups. Transformando ideias em realidade.
+Sobre o projeto
+O StartUP é uma plataforma que conecta pessoas interessadas em criar startups, encontrar sócios e formar equipes com habilidades complementares.
 
-Aplicação web para conectar founders, designers e desenvolvedores em um ambiente de descoberta e colaboração de startups.
+A proposta é funcionar como uma rede social voltada ao empreendedorismo, permitindo que os usuários apresentem suas habilidades, divulguem ideias e encontrem colaboradores para desenvolver novos projetos.
 
-## Como rodar
+Por exemplo, uma pessoa que precisa de um desenvolvedor back-end pode publicar essa necessidade e encontrar alguém interessado em participar da equipe.
 
-1. Instale as dependências:
-   npm install
-2. Inicie o projeto:
-   npm run dev
+Objetivo do produto
+Facilitar a criação de startups por meio da conexão entre pessoas, ideias e habilidades, incentivando a colaboração e o desenvolvimento de novos negócios.
 
-## Autenticação
+Público-alvo
+Empreendedores que desejam tirar ideias do papel.
+Desenvolvedores e profissionais de tecnologia.
+Designers e profissionais de marketing.
+Pessoas que procuram sócios ou colaboradores.
+Estudantes interessados em inovação e empreendedorismo.
+Funcionalidades do produto
+Perfis de usuários: apresentação de habilidades e interesses.
+Publicação de projetos: divulgação de ideias e oportunidades.
+Busca por colaboradores: conexão entre pessoas com habilidades complementares.
+Formação de equipes: aproximação de pessoas interessadas em desenvolver startups.
+Comunicação entre usuários: contato para discutir ideias e possíveis parcerias.
+Projeto 3 — Painel de Métricas do Produto
+O objetivo desta etapa é acompanhar o desempenho do StartUP por meio de métricas de produto e de código, identificar dificuldades e tomar decisões coletivas com base nos resultados analisados.
 
-Por padrão, a aplicação entra em modo demo quando as variáveis de ambiente do Supabase não estão configuradas. Isso permite testar o fluxo de login e cadastro localmente sem uma conta real.
+Métricas acompanhadas
+Categoria	Indicadores
+Produto	Taxa de ativação, retenção e NPS
+Código	Commits realizados e bugs em aberto
+Cada indicador apresenta seu valor atual, o período analisado e uma ação definida pela equipe para responder a uma possível piora do resultado.
 
-Credenciais de demonstração:
-- E-mail: joao@startup.com
-- Senha: 123456
+Cálculos e análise
+O painel apresenta os cálculos e as interpretações dos seguintes indicadores:
 
-## Variáveis de ambiente
+Taxa de ativação: percentual de visitantes que realizam uma ação importante no produto.
+Retenção: percentual dos usuários de uma mesma coorte que voltam a utilizar o produto.
+Churn: percentual dos usuários da mesma coorte que não retornam durante o período de acompanhamento.
+NPS (Net Promoter Score): indicador de satisfação e disposição dos usuários para recomendar o produto.
+Commits: registros de alterações realizadas no código do projeto.
+Bugs em aberto: erros identificados que ainda precisam ser corrigidos.
+Funil AARRR: análise das etapas de aquisição, ativação, retenção, receita e recomendação para identificar a maior queda de usuários.
+Os valores, as fórmulas, as interpretações e as ações correspondentes estão documentados em metricas/painel.md.
 
-Se quiser conectar com Supabase real, crie um arquivo .env e configure:
+Decisão coletiva
+Após discutir as alternativas e realizar a votação, a equipe definiu como ação prioritária simplificar o cadastro e melhorar as orientações do primeiro acesso ao StartUP.
 
-VITE_SUPABASE_URL=
-VITE_SUPABASE_ANON_KEY=
+A decisão foi motivada pela queda estimada de 70% entre aquisição e ativação: dos 20 visitantes considerados no painel, 6 foram ativados e 14 não chegaram à etapa de ativação.
 
-Se as variáveis forem omitidas, o app continua funcionando em modo mock local.
+A equipe priorizará essa melhoria para facilitar a entrada de novos usuários e reduzir as dificuldades no primeiro acesso.
 
-### Publicar com Supabase no GitHub Pages
+O registro formal da decisão, incluindo a justificativa, o responsável e a data de revisão, está disponível em metricas/decisao.md.
 
-O build publicado precisa receber estas variáveis durante a execução do GitHub
-Actions:
+Arquivos do projeto
+**Painel de métricas — painel.md: indicadores de produto e código, cálculos de NPS, retenção e churn, funil AARRR e análise dos resultados.
+**Decisão coletiva — decisao.md: registro da decisão da equipe, justificativa numérica, responsável e data de revisão.
+Issue #1 — Ação prioritária: acompanhamento das tarefas para simplificar o cadastro e melhorar o primeiro acesso.
+Tecnologias utilizadas
+Frontend: React.
+Versionamento e colaboração: Git e GitHub.
+Equipe
+Integrante	Projeto
+Kauã	StartUP
+Eryck	StartUP
+Mario	StartUP
+Caio	StartUP
+Wanessa	StartUP
+Organização da equipe
+As responsabilidades foram distribuídas para permitir a execução das atividades em paralelo, mantendo a participação coletiva nas decisões do projeto.
 
-- `SUPABASE_URL`: Project URL em **Supabase > Project Settings > API**.
-- `SUPABASE_ANON_KEY`: chave publicável (`anon`/`publishable`) do mesmo projeto.
+Função	Responsabilidade
+Métricas de produto	Analisar retenção, engajamento e NPS.
+Métricas de código	Verificar commits, pull requests (PRs), bugs e desempenho.
+Painel	Organizar os indicadores, os valores e os cálculos.
+Documentação	Registrar o funil AARRR e a decisão coletiva.
+A divisão de responsabilidades orienta a execução das tarefas, enquanto as decisões sobre as prioridades do produto são discutidas e tomadas por toda a equipe.
 
-No GitHub, abra **Settings > Secrets and variables > Actions > New repository
-secret** e cadastre cada valor com o nome exato acima. Nunca use a chave
-`service_role` no site: variáveis `VITE_*` são incluídas no JavaScript público.
-As tabelas devem estar protegidas por Row Level Security.
+Atividade: Projeto 3 — Painel de Métricas do Produto.
 
-Depois, em **Settings > Pages**, selecione **GitHub Actions** como fonte de
-deploy. Faça um push para `main` ou `master` (ou execute manualmente
-**Actions > Deploy to GitHub Pages > Run workflow**). O workflow valida os
-secrets, faz lint, compila o site com as credenciais do Supabase e publica o
-artefato. A configuração da URL base também é ajustada para o nome do
-repositório.
+Status do projeto
+Em desenvolvimento.
 
-## Conversas em tempo real
+A equipe utiliza os indicadores e as necessidades dos usuários para orientar as melhorias e acompanhar a evolução do StartUP.
 
-O chat em tempo real exige um projeto Supabase configurado. Aplique o arquivo
-`supabase/migrations/20261023000000_realtime_direct_messages.sql` no SQL Editor
-do projeto Supabase antes de usar a página de Mensagens. A migration cria os
-perfis públicos básicos, conversas diretas e mensagens, configura políticas
-de acesso por participante e habilita a publicação Realtime para mensagens.
-Para aplicar, abra o painel do Supabase, selecione o projeto, entre em
-**SQL Editor**, crie uma consulta, cole o conteúdo completo do arquivo e
-execute. A migration pode ser executada novamente sem duplicar suas políticas.
-
-## Scripts
-
-- npm run dev
-- npm run build
-- npm run lint
+StartUP — Grandes ideias começam com as conexões certas.
