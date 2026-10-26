@@ -677,6 +677,11 @@ body.escuro .config-page {
   cursor: pointer;
 }
 
+.delete-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
 @media (max-width: 900px) {
 
   .config-layout {

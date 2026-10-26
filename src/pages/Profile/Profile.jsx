@@ -1,9 +1,16 @@
+import useAuth from "../../hooks/useAuth"
+import getUserDisplayName from "../../utils/getUserDisplayName"
 import Post from "../../components/Post/Post"
 import StartupCard from "../../components/StartupCard/StartupCard"
 import Button from "../../components/Button/Button"
 import "./Profile.css"
 
 function Profile() {
+    const { user } = useAuth()
+    const displayName = getUserDisplayName(user)
+    const username = user?.user_metadata?.username?.replace(/^@/, "") ||
+        user?.email?.split("@")[0] ||
+        "usuario"
 
     return (
         <div className="profile">
@@ -13,14 +20,14 @@ function Profile() {
                     <section className="profile-header">
 
                         <div className="profile-avatar">
-                            J
+                            {displayName.charAt(0).toUpperCase()}
                         </div>
 
                         <div className="profile-info">
 
-                            <h1>João Carlos</h1>
+                            <h1>{displayName}</h1>
 
-                            <span>@joaocarlos</span>
+                            <span>@{username}</span>
 
                             <p>
                                 Desenvolvedor apaixonado por tecnologia,
@@ -87,8 +94,8 @@ function Profile() {
                         <h2>Publicações</h2>
 
                         <Post
-                            author="João Carlos"
-                            username="@joaocarlos"
+                            author={displayName}
+                            username={`@${username}`}
                             time="1d"
                             content="Hoje comecei a trabalhar em uma nova ideia de startup."
                             likes={31}

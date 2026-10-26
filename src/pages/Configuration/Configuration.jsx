@@ -1,24 +1,22 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 import useAuth from "../../hooks/useAuth"
-import { updateCurrentUser } from "../../services/auth"
+import { deleteCurrentUser, updateCurrentUser } from "../../services/auth"
+import { supabase } from "../../services/supabase"
+import getUserDisplayName from "../../utils/getUserDisplayName"
 import { applyTheme, loadSavedSettings, saveSettings } from "../../utils/theme"
 
 import "./Configuration.css"
 
 export default function Configuration() {
   const { user, setUser } = useAuth()
+  const navigate = useNavigate()
   const [activeSection, setActiveSection] = useState("conta")
   const [saving, setSaving] = useState(false)
+  const [deleting, setDeleting] = useState(false)
 
-  const accountName = [
-    user?.user_metadata?.name,
-    user?.user_metadata?.full_name,
-    user?.name,
-    user?.user_metadata?.username
-  ].find((value) => typeof value === "string" && value.trim())
-    ?.trim()
-    .replace(/^@/, "") || user?.email?.split("@")[0] || ""
+  const accountName = getUserDisplayName(user)
 
   const [config, setConfig] = useState(() => {
     const saved = loadSavedSettings()
@@ -79,6 +77,39 @@ export default function Configuration() {
       alert("Não foi possível salvar as configurações.")
     } finally {
       setSaving(false)
+    }
+  }
+
+  async function handleDeleteAccount() {
+    const confirmed = window.confirm(
+      "Tem certeza de que deseja excluir sua conta? Essa ação é permanente e não pode ser desfeita."
+    )
+
+    if (!confirmed) {
+      return
+    }
+
+    setDeleting(true)
+
+    try {
+      await deleteCurrentUser()
+      setUser(null)
+
+      const { error } = await supabase.auth.signOut({
+        scope: "local"
+      })
+
+      if (error) {
+        console.error("Conta excluída, mas não foi possível limpar a sessão local:", error)
+        alert("Conta excluída. Recarregue a página para encerrar esta sessão.")
+      }
+
+      navigate("/login", { replace: true })
+    } catch (error) {
+      console.error("Erro ao excluir conta:", error)
+      alert(error.message || "Não foi possível excluir a conta.")
+    } finally {
+      setDeleting(false)
     }
   }
 
@@ -600,8 +631,12 @@ export default function Configuration() {
 
             </div>
 
-            <button className="delete-button">
-              Excluir conta
+            <button
+              className="delete-button"
+              onClick={handleDeleteAccount}
+              disabled={deleting}
+            >
+              {deleting ? "Excluindo..." : "Excluir conta"}
             </button>
 
           </div>

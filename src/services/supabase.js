@@ -127,6 +127,18 @@ const demoAuth = {
         return { error: null }
     },
 
+    async deleteUser() {
+        if (!activeDemoUser) {
+            return {
+                error: { message: "Usuário não autenticado.", status: 401 }
+            }
+        }
+
+        demoUsers.delete(activeDemoUser.email)
+        activeDemoUser = null
+        return { error: null }
+    },
+
     async getSession() {
         return {
             data: {

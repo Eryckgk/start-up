@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom"
 import "./Navbar.css"
 
 import useAuth from "../../hooks/useAuth"
+import getUserDisplayName from "../../utils/getUserDisplayName"
 
 function Navbar({ onSearch }) {
     const { user } = useAuth()
@@ -17,13 +18,7 @@ function Navbar({ onSearch }) {
         setSearch(searchParams.get("search") || "")
     }, [searchParams])
 
-    const displayName =
-        user?.user_metadata?.name?.trim() ||
-        user?.user_metadata?.full_name?.trim() ||
-        user?.name?.trim() ||
-        user?.user_metadata?.username?.replace(/^@/, "").trim() ||
-        user?.email?.split("@")[0] ||
-        "Usuário"
+    const displayName = getUserDisplayName(user)
 
     const avatarLetter =
         displayName
